@@ -133,11 +133,10 @@
             //else saves selected tile
             function moveTile(obj) {
                 temp = [];
-		tile1 = document.getElementById('c0')
+		tile1 = document.getElementById('c0');
                 tile2 = obj;
                 if (obj == tile1) {
                     return;
-                    obj.style.backgroundColor = '';
                 }//ensures that tile has valid move
                 //swaps selected tiles
                 else if (tile1 != null && validMove(tile1, tile2)) {
@@ -147,13 +146,8 @@
                     obj.id = tile1.id;
                     tile1.innerHTML = temp[0];
                     tile1.id = temp[1];
-                    tile1.style.backgroundColor = '';
                     tile1 = null;
                 }//saves obj to tile1
-                else if (tile1 == null && (obj.innerHTML == "")) {
-                    tile1 = obj;
-                    tile1.style.backgroundColor = "gray";
-                }
                 if (TabletoArray() == goalArr)
                     console.log("WIN");
             }
